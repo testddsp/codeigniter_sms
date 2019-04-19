@@ -12,7 +12,7 @@ Controller
 --------------- !Model: Model_sms.php ! ---------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------
 
-public function Sendemails($mobile_no,$subject,$message){
+public function Sendemails($tosent,$subject,$message){
 		$config = Array(
 		    'protocol' => 'smtp',// or mail on server
 		    'smtp_host' => 'ssl://smtp.googlemail.com',
@@ -24,7 +24,7 @@ public function Sendemails($mobile_no,$subject,$message){
 
 		);
 		$this->load->library('email', $config);
-		$this->email->from('kickkare@gmail.com', 'KickKare');
+		$this->email->from('youremail@gmail.com', 'alias');
 		$this->email->to($tosent);
 		$this->email->subject($subject);
 		$this->email->message($message);
